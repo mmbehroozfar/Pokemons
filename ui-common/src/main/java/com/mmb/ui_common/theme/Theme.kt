@@ -1,4 +1,4 @@
-package com.mmb.pokemons.ui.theme
+package com.mmb.ui_common.theme
 
 import android.app.Activity
 import android.os.Build

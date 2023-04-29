@@ -1,4 +1,4 @@
-package com.mmb.pokemons.ui.theme
+package com.mmb.ui_common.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

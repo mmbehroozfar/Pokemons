@@ -5,20 +5,12 @@ plugins {
     id("dagger.hilt.android.plugin")
 }
 
-kapt {
-    correctErrorTypes = true
-}
-
 android {
-    namespace = "com.mmb.pokemons"
+    namespace = "com.mmb.ui_pokemon"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.mmb.pokemons"
         minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -56,10 +48,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":ui-common"))
-    implementation(project(":ui-pokemon"))
 
     implementation("androidx.core:core-ktx:1.10.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
@@ -69,13 +59,10 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
-    implementation("androidx.navigation:navigation-compose:2.5.3")
+    implementation("androidx.compose.runtime:runtime")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 
     implementation("com.google.dagger:hilt-android:2.45")
     kapt("com.google.dagger:hilt-compiler:2.45")
-
-    testImplementation("junit:junit:4.13.2")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    implementation("androidx.paging:paging-common-ktx:3.1.1")
 }
