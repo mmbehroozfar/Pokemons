@@ -16,3 +16,4 @@ rootProject.name = "Pokemons"
 include(":app")
 include(":data")
 include(":domain")
+include(":ui-common")
