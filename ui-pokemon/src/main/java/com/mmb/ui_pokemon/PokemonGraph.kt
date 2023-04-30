@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import androidx.navigation.navigation
 import com.mmb.ui_pokemon.PokemonGraph.PokemonDetail.NAME_ARGUMENT
+import com.mmb.ui_pokemon.detail.PokemonDetailScreen
 import com.mmb.ui_pokemon.list.PokemonsListScreen
 
 object PokemonGraph {
@@ -44,7 +45,7 @@ fun NavGraphBuilder.pokemonGraph(navController: NavHostController) {
                 navArgument(NAME_ARGUMENT) { type = NavType.StringType },
             )
         ) {
-
+            PokemonDetailScreen()
         }
     }
 }

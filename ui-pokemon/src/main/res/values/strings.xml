@@ -6,4 +6,10 @@
     <string name="connection_problem">Connection problem</string>
     <string name="something_went_wrong">Something went wrong</string>
     <string name="try_again">Try again</string>
+    <string name="base_experience">Base experience: %s</string>
+    <string name="height">Height: %s</string>
+    <string name="order">Order: %s</string>
+    <string name="weight">Weight: %s</string>
+    <string name="abilities">Abilities: %s</string>
+    <string name="heldItems">Held items: %s</string>
 </resources>
