@@ -68,4 +68,11 @@ dependencies {
     implementation("androidx.paging:paging-common-ktx:3.1.1")
     implementation("androidx.paging:paging-compose:1.0.0-alpha18")
     implementation("io.coil-kt:coil-compose:2.3.0")
+
+    testImplementation("org.junit:junit-bom:5.9.3")
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
+    testImplementation("com.google.truth:truth:1.1.3")
+    testImplementation("io.mockk:mockk-android:1.13.4")
+    testImplementation("app.cash.turbine:turbine:0.10.0")
 }
