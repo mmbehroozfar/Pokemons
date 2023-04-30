@@ -1,11 +1,14 @@
 package com.mmb.ui_pokemon
 
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
-import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import androidx.navigation.navigation
+import com.google.accompanist.navigation.animation.composable
 import com.mmb.ui_pokemon.PokemonGraph.PokemonDetail.NAME_ARGUMENT
 import com.mmb.ui_pokemon.detail.PokemonDetailScreen
 import com.mmb.ui_pokemon.list.PokemonsListScreen
@@ -26,6 +29,7 @@ object PokemonGraph {
     }
 }
 
+@OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.pokemonGraph(navController: NavHostController) {
     navigation(
         route = PokemonGraph.route,
@@ -43,7 +47,13 @@ fun NavGraphBuilder.pokemonGraph(navController: NavHostController) {
             route = PokemonGraph.PokemonDetail.route,
             arguments = listOf(
                 navArgument(NAME_ARGUMENT) { type = NavType.StringType },
-            )
+            ),
+            enterTransition = {
+                fadeIn()
+            },
+            exitTransition = {
+                fadeOut()
+            },
         ) {
             PokemonDetailScreen()
         }
