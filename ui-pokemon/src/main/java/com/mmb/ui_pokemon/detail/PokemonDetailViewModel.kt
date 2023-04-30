@@ -21,7 +21,7 @@ class PokemonDetailViewModel @Inject constructor(
     private val getPokemonDetailUseCase: GetPokemonDetailUseCase,
 ) : BaseViewModel<PokemonDetailIntent, PokemonDetailState, PokemonDetailEffect>(PokemonDetailState()) {
 
-    val name =
+    private val name =
         requireNotNull(savedStateHandle.get<String>(PokemonGraph.PokemonDetail.NAME_ARGUMENT))
 
     init {

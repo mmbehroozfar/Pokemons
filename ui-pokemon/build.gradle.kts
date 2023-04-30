@@ -76,3 +76,7 @@ dependencies {
     testImplementation("io.mockk:mockk-android:1.13.4")
     testImplementation("app.cash.turbine:turbine:0.10.0")
 }
+
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
