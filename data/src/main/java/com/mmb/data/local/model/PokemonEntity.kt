@@ -12,8 +12,8 @@ import androidx.room.PrimaryKey
     ]
 )
 data class PokemonEntity(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
+    @PrimaryKey
+    val id: Int,
     @ColumnInfo(name = "name")
     val name: String,
     @ColumnInfo(name = "url")

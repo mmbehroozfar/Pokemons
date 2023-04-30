@@ -19,7 +19,7 @@ class ObservePagedPokemonUseCase @Inject constructor(
 
     override suspend fun createObservable(params: Unit): Flow<PagingData<Pokemon>> {
         val pagingConfig = PagingConfig(
-            pageSize = 20,
+            pageSize = 15,
             prefetchDistance = 3,
             enablePlaceholders = false,
             initialLoadSize = 15,

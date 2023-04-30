@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pokemons">Pokemons</string>
+    <string name="internet_is_unavailable">Internet is unavailable</string>
+    <string name="it_s_not_you_it_s_us">It\'s not you, It\'s us</string>
+    <string name="connection_problem">Connection problem</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="try_again">Try again</string>
+</resources>

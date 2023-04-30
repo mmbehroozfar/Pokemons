@@ -9,6 +9,7 @@ class PokemonMapper @Inject constructor() {
 
     operator fun invoke(response: PokemonResponse): PokemonEntity {
         return PokemonEntity(
+            id = response.url.substringBeforeLast("/").substringAfterLast("/").toInt(),
             name = response.name,
             url = response.url,
         )

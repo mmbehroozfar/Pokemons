@@ -26,13 +26,14 @@ class PokemonRemoteMediator @Inject constructor(
         state: PagingState<Int, PokemonEntity>,
     ): MediatorResult {
         try {
-            val offset = preferenceLocalDataSource.getPagingOffset().first()
-            val response = pokemonRemoteDataSource.getPagedPokemons(offset)
-
             if (loadType == LoadType.REFRESH) {
                 pokemonLocalDataSource.clearPokemons()
                 preferenceLocalDataSource.setPagingOffset(0)
+            } else if (loadType == LoadType.PREPEND) {
+                return MediatorResult.Success(false)
             }
+            val offset = preferenceLocalDataSource.getPagingOffset().first()
+            val response = pokemonRemoteDataSource.getPagedPokemons(offset)
 
             val endOfPaginationReached = if (response.next == null) {
                 preferenceLocalDataSource.setPagingOffset(
@@ -56,4 +57,9 @@ class PokemonRemoteMediator @Inject constructor(
             return MediatorResult.Error(e)
         }
     }
+
+    override suspend fun initialize(): InitializeAction {
+        return InitializeAction.SKIP_INITIAL_REFRESH
+    }
+
 }

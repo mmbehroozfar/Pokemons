@@ -1,11 +1,13 @@
 package com.mmb.ui_pokemon
 
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import androidx.navigation.navigation
 import com.mmb.ui_pokemon.PokemonGraph.PokemonDetail.NAME_ARGUMENT
+import com.mmb.ui_pokemon.list.PokemonsListScreen
 
 object PokemonGraph {
     const val route = "pokemon-graph"
@@ -23,13 +25,17 @@ object PokemonGraph {
     }
 }
 
-fun NavGraphBuilder.pokemonGraph() {
+fun NavGraphBuilder.pokemonGraph(navController: NavHostController) {
     navigation(
         route = PokemonGraph.route,
         startDestination = PokemonGraph.startDestination,
     ) {
         composable(PokemonGraph.PokemonsList.route) {
-
+            PokemonsListScreen(
+                onNavigateToDetailScreen = {
+                    navController.navigate(PokemonGraph.PokemonDetail.createRoute(it))
+                },
+            )
         }
 
         composable(

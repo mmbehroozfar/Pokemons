@@ -12,6 +12,6 @@ fun AppNavigator(navController: NavHostController) {
         navController = navController,
         startDestination = PokemonGraph.route,
     ) {
-        pokemonGraph()
+        pokemonGraph(navController)
     }
 }
